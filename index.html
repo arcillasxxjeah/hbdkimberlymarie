@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBD KIMBERLY MARIE</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe4e1;
+            font-family: 'Comic Sans MS', sans-serif;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .prompt-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border: 5px solid #ffb6c1;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+        }
+
+        .prompt-text {
+            font-size: 20px;
+            color: #ff69b4;
+            margin-bottom: 20px;
+        }
+
+        .prompt-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .next-btn {
+            padding: 10px 20px;
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .next-btn:hover {
+            background-color: #ff85d3;
+        }
+
+        .balloon {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background-color: #ff69b4;
+            border-radius: 50%;
+            bottom: -50px;
+            animation: float 4s ease-in-out infinite;
+            opacity: 0.9;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .balloon:before {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background-color: #ff69b4;
+            border-radius: 50%;
+        }
+
+        .balloon:after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 40px;
+            background-color: #8b4513;
+        }
+
+        .balloon:nth-child(1) {
+            left: 10%;
+            background-color: #ff69b4;
+            animation-delay: 0s;
+        }
+
+        .balloon:nth-child(2) {
+            left: 30%;
+            background-color: #ffd700;
+            animation-delay: 0.5s;
+        }
+
+        .balloon:nth-child(3) {
+            left: 50%;
+            background-color: #00ced1;
+            animation-delay: 1s;
+        }
+
+        .balloon:nth-child(4) {
+            left: 70%;
+            background-color: #ff4500;
+            animation-delay: 1.5s;
+        }
+
+        .balloon:nth-child(5) {
+            left: 90%;
+            background-color: #8a2be2;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-150px);
+            }
+
+            100% {
+                transform: translateY(-100px);
+            }
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Balloons -->
+    <div class="balloon" onclick="popBalloon(this)"></div>
+    <div class="balloon" onclick="popBalloon(this)"></div>
+    <div class="balloon" onclick="popBalloon(this)"></div>
+    <div class="balloon" onclick="popBalloon(this)"></div>
+    <div class="balloon" onclick="popBalloon(this)"></div>
+
+    <div class="prompt-container">
+        <div id="prompt-text" class="prompt-text">hHeLhlO pH() BoHsSzZ k1MhbHeErRLyY mMAaRh13 MhAPh@gHM/-\hHaLh <br><br>
+            next mo dali</div>
+        <img id="prompt-image" class="prompt-image" src="" alt="Prompt Image">
+        <button class="next-btn" onclick="nextPrompt()">Next</button>
+    </div>
+
+    <figure>
+        <audio controls src="src/hbdsong.mp3" autoplay></audio>
+    </figure>
+
+    <script>
+        const prompts = [
+            { type: 'image', content: "src/A.jpeg" },
+            { type: 'image', content: "src/B.jpeg" },
+            { type: 'image', content: "src/C.jpeg" },
+            { type: 'image', content: "src/D.jpeg" },
+            { type: 'image', content: "src/E.jpeg" },
+            { type: 'image', content: "src/F.jpeg" },
+            { type: 'image', content: "src/G.jpeg" },
+            { type: 'image', content: "src/H.jpeg" },
+            { type: 'image', content: "src/I.jpeg" },
+            { type: 'image', content: "src/J.jpeg" },
+            { type: 'image', content: "src/K.jpeg" },
+            { type: 'image', content: "src/KimberlyMarie.png" },
+            { type: 'text', content: "Uhm Pano Ko Bato ccmulan? 😆Happy Birthday Beh!! 🤪®Hehe!Una sa lahat ng cute ko. 😜 Char! Eto n talaga 😆 SO ayun...happy birthday sa aming pinaka mabait at kind na kaibigan and friend ❤️☺️tanda mo na jusq! 😂😂dami siguro nag mbtc sayo hehe 😘🤣😍 yun lang! Wag ka sana magbabago pero sana mag bago ka na 🙂 HBD!" },
+            { type: 'image', content: "src/pic.jpg" },
+            { type: 'image', content: "src/hat.png" },
+            { type: 'text', content: "Happy Birthday, Kimberly Marie!<br> - Jeah Batumbakal <33" },
+        ];
+
+        let currentPrompt = 0;
+
+        function nextPrompt() {
+            const promptText = document.getElementById('prompt-text');
+            const promptImage = document.getElementById('prompt-image');
+            const nextButton = document.querySelector('.next-btn');
+
+            if (currentPrompt < prompts.length) {
+                const currentData = prompts[currentPrompt];
+
+                if (currentData.type === 'text') {
+                    promptText.innerHTML = currentData.content;
+                    promptText.style.display = 'block';
+                    promptImage.style.display = 'none';
+                } else if (currentData.type === 'image') {
+                    promptImage.src = currentData.content;
+                    promptImage.style.display = 'block';
+                    promptText.style.display = 'none';
+                }
+
+                currentPrompt++;
+            } else {
+                promptImage.src = "src/likod.jpg";
+                promptImage.style.display = 'block';
+                promptText.innerHTML = "HBD";
+                promptText.style.display = 'block';
+                nextButton.style.display = 'none';
+            }
+        }
+
+        function popBalloon(balloon) {
+            balloon.style.animation = 'pop 0.5s forwards';
+            setTimeout(() => {
+                balloon.remove();
+            }, 500);
+        }
+    </script>
+
+</body>
+
+</html>
